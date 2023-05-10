@@ -25,7 +25,6 @@ create table projects (
     hash varchar(255) not null,
     created_at timestamp default now(),
     updated_at timestamp,
-    owner_id bigint not null references user_account (id),
     client_id bigint not null references client (id)
 );
 create table label(
@@ -33,7 +32,8 @@ create table label(
     name varchar(100) NOT NULL,
     color varchar(7) Not null,
     created_at timestamp default now(),
-    updated_at timestamp
+    updated_at timestamp,
+    project_id bigint not null references projects (id)
 );
 create table activities_list(
     id bigserial primary key,

@@ -3,19 +3,20 @@ package med.voll.api.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import med.voll.api.dtos.Registese;
+import med.voll.api.dtos.UserDTOS.Registese;
 
 
 import java.util.Date;
 
-
+@Data
+@EqualsAndHashCode(callSuper=true)
 @Entity(name = "User")
 @Table(name = "user_account")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Builder
-public class UserAccount {
+public class UserAccount  extends  WithTimestamp{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

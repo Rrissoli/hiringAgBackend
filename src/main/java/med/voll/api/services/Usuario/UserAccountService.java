@@ -1,7 +1,7 @@
-package med.voll.api.services;
+package med.voll.api.services.Usuario;
 
-import med.voll.api.dtos.Login;
-import med.voll.api.dtos.Registese;
+import med.voll.api.dtos.UserDTOS.Login;
+import med.voll.api.dtos.UserDTOS.Registese;
 
 import med.voll.api.models.UserAccount;
 import med.voll.api.repositories.UserAccountRepository;

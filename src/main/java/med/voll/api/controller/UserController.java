@@ -1,9 +1,9 @@
 package med.voll.api.controller;
 
 import jakarta.validation.Valid;
-import med.voll.api.dtos.Login;
-import med.voll.api.dtos.Registese;
-import med.voll.api.services.UserAccountService;
+import med.voll.api.dtos.UserDTOS.Login;
+import med.voll.api.dtos.UserDTOS.Registese;
+import med.voll.api.services.Usuario.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
