@@ -6,6 +6,7 @@ import lombok.*;
 import med.voll.api.dtos.ActivitiesListDTOS.CreateActivityListDTO;
 
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity(name = "Activities_list")
@@ -29,6 +30,8 @@ public class Activities_list {
     @ManyToOne
     @JsonIgnore
     private Project project;
+    @OneToMany(mappedBy = "activities_list")
+    private List<Activity> activities;
 
     public Activities_list(CreateActivityListDTO createActivityListDTO, Project project) {
         this.name = createActivityListDTO.getName();

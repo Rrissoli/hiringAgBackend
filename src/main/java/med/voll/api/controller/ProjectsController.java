@@ -7,6 +7,7 @@ import med.voll.api.models.Client;
 import med.voll.api.models.Project;
 import med.voll.api.services.Clientes.ReadOnlyClientService;
 import med.voll.api.services.Projetos.CreateProjectService;
+import med.voll.api.services.Projetos.DeleteProjectService;
 import med.voll.api.services.Projetos.ReadAllProjectsService;
 import med.voll.api.services.Projetos.ReadOnlyProjectsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,8 @@ public class ProjectsController {
 
     @Autowired
     private ReadOnlyProjectsService readOnly;
-
+    @Autowired
+    private DeleteProjectService deleteProject;
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Project create(@RequestBody @Valid CreateProjectDTO createProject){
@@ -44,7 +46,12 @@ public class ProjectsController {
         return readOnly.execute(Long.valueOf(id));
     }
 
-    //Get /projects/{hash}
+
+
     //Patch  /projects/{hash}
-    //Delete /projects/{hash}
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable String id) {
+        deleteProject.delete(Long.valueOf(id));
+    }
 }

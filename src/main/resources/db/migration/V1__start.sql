@@ -48,6 +48,7 @@ create table activity(
     id bigserial primary key,
     title varchar(100) NOT NULL,
     description text,
+    status varchar(10) NOT NULL default 'ACTIVE',
     start_date timestamp default now(),
     dae_date timestamp,
     show_order int not null,
